@@ -55,10 +55,6 @@ def get_colors():
 matchups = get_matchups(["Villanova"],1)
 results = matchups.copy(deep=True)
 
-# new = ["Villanova"]
-# for x in matchups.opp_market:
-#   new.append(x)
-
 iterations = 2
 while len(results) > 0:
   new = ["Villanova"]
@@ -79,7 +75,6 @@ for market, t_color in zip(nodes.market, nodes.color):
   u.node(market, color=t_color)
 
 for market,opp_market,l_color in zip(matchups.market,matchups.opp_market,matchups.color):
-  u.node(market, )
   u.edge(market, opp_market, color=l_color)
 u.render()
 
